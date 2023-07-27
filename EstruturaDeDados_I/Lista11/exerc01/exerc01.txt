@@ -1,0 +1,22 @@
+cadastrarFunc 5 Joao M
+cadastrarFunc 1 Maria F
+cadastrarFunc 3 Pedro M
+cadastrarFunc 8 Joana F
+cadastrarFunc 10 Marcos M
+cadastrarFunc 1 José M
+mostraFunc
+addFuncDep 0 20
+addFuncDep 50 0
+addFuncDep 1 0
+addFuncDep 1 0
+addFuncDep 3 0
+addFuncDep 8 0
+addFuncDep 10 2
+addFuncDep 1 2
+addFuncDep 8 2
+mostraDep 5
+mostraDep 2
+removeFunc 8
+mostraDep 0
+mostraDep 2
+
