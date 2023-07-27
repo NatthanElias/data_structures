@@ -10,7 +10,7 @@ Learned (PT-BR: Aprendido):
 - functions and types of matrixes
 - recursive functions
 - struct data type
-- input/output on text files
+- input/output from text files
 - pointers
   - dynamic memory allocation
   - pointer arithmetic
