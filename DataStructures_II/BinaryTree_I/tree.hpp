@@ -5,9 +5,9 @@ typedef struct Node {
     int data;
     Node *left;
     Node *right;
-} tree_node;
+} leaf_node;
 
-int ifEmpty(tree_node *t) {
+int ifEmpty(leaf_node *t) {
 
     if(t == NULL)
         return 1;
@@ -18,10 +18,10 @@ int ifEmpty(tree_node *t) {
     return 0;
 }
 
-void insertTree(tree_node **t, int num) {
+void insertTree(leaf_node **t, int num) {
 
     if(*t == NULL) {
-        *t = new tree_node;
+        *t = new leaf_node;
         (*t)->left = NULL;
         (*t)->right = NULL;
         (*t)->data = num;
@@ -36,7 +36,8 @@ void insertTree(tree_node **t, int num) {
         insertTree(&(*t)->right, num);
     }
 }
-void printTree(tree_node *t) {
+
+void printTree(leaf_node *t) {
 
     cout << "<";
 
@@ -44,6 +45,45 @@ void printTree(tree_node *t) {
         cout << t->data;
         printTree(t->left);
         printTree(t->right);
+    }
+
+    cout << ">";
+}
+
+void printTreePre(leaf_node *t) {
+
+    cout << "<";
+
+    if(!ifEmpty(t)) {
+        cout << t->data;
+        printTreePre(t->left);
+        printTreePre(t->right);
+    }
+
+    cout << ">";
+}
+
+void printTreeSym(leaf_node *t) {
+
+    cout << "<";
+
+    if(!ifEmpty(t)) {
+        printTreeSym(t->left);
+        cout << t->data;
+        printTreeSym(t->right);
+    }
+
+    cout << ">";
+}
+
+void printTreePost(leaf_node *t) {
+
+    cout << "<";
+
+    if(!ifEmpty(t)) {
+        printTreePost(t->left);
+        printTreePost(t->right);
+        cout << t->data;
     }
 
     cout << ">";
